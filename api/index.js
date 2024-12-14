@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routes/user.routes.js';
-import signupRouter from './routes/auth.routes.js';
+import {signupRouter,signinRouter} from './routes/auth.routes.js';
 
 dotenv.config();
 
@@ -19,6 +19,7 @@ app.listen(3000, ()=>{
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', signupRouter);
+app.use('/api/auth', signinRouter);
 
 app.use((err,req, res, next) => {
     const statuscode = err.statuscode || 500;
