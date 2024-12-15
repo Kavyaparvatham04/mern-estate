@@ -10,7 +10,7 @@ const persistConfig = {
     storage,
     version: 1,
 }
-
+  
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
